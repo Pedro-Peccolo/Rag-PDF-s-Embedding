@@ -1,0 +1,35 @@
+==============================================================
+COMO CONFIGURAR A API KEY DO HUGGINGFACE (GRATUITA)
+==============================================================
+
+PASSO 1: Criar conta no HuggingFace
+-----------------------------------
+- Acesse: https://huggingface.co/join
+- Crie sua conta gratuita
+- Confirme seu email
+
+PASSO 2: Gerar API Token
+-------------------------
+- Faca login em: https://huggingface.co
+- Acesse: https://huggingface.co/settings/tokens
+- Clique em "New token"
+- De um nome (ex: "rag-projeto")
+- Selecione "Read" como permissao
+- Clique em "Generate token"
+- COPIE o token gerado
+
+PASSO 3: Criar arquivo .env
+----------------------------
+- Na pasta do projeto (/home/PEC/RagTeste/), crie um arquivo chamado: .env
+- Dentro do arquivo, coloque:
+
+HUGGINGFACEHUB_API_TOKEN=seu_token_aqui
+
+(Substitua "seu_token_aqui" pelo token copiado)
+
+EXEMPLO de arquivo .env:
+HUGGINGFACEHUB_API_TOKEN=hf_AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
+
+PRONTO! Depois disso, execute:
+python3 main.py
+
