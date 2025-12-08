@@ -1,0 +1,68 @@
+================================================================================
+ÍNDICE DE DOCUMENTOS DE TESTE
+================================================================================
+
+Este arquivo contém informações sobre os documentos criados para teste.
+Cada documento tem um parágrafo absurdo inserido para testar a busca.
+
+================================================================================
+
+DOCUMENTO 001
+--------------------------------------------------------------------------------
+Arquivo: documento_001.txt
+Tamanho: 17,099 caracteres
+Palavras: 2,159
+Linhas: 271
+Parágrafo absurdo: O jacaré programou um servidor em COBOL na lua enquanto os pinguins dançavam tan...
+
+DOCUMENTO 002
+--------------------------------------------------------------------------------
+Arquivo: documento_002.txt
+Tamanho: 15,947 caracteres
+Palavras: 2,000
+Linhas: 255
+Parágrafo absurdo: A tartaruga ninja desenvolveu um sistema operacional em Python que roda exclusiv...
+
+DOCUMENTO 003
+--------------------------------------------------------------------------------
+Arquivo: documento_003.txt
+Tamanho: 15,097 caracteres
+Palavras: 2,076
+Linhas: 247
+Parágrafo absurdo: O unicórnio rosa invisível programou um banco de dados usando SQL escrito em hie...
+
+DOCUMENTO 004
+--------------------------------------------------------------------------------
+Arquivo: documento_004.txt
+Tamanho: 15,126 caracteres
+Palavras: 2,058
+Linhas: 239
+Parágrafo absurdo: A vaca que pula a cerca desenvolveu um algoritmo de machine learning treinado ex...
+
+DOCUMENTO 005
+--------------------------------------------------------------------------------
+Arquivo: documento_005.txt
+Tamanho: 15,847 caracteres
+Palavras: 1,969
+Linhas: 255
+Parágrafo absurdo: O peixe que voa implementou um sistema de cache distribuído usando memória de el...
+
+================================================================================
+QUERIES DE TESTE SUGERIDAS
+================================================================================
+
+Query 1: Onde está o texto sobre jacaré e COBOL e lua?
+  (Deve encontrar: O jacaré programou um servidor em COBOL na lua enquanto os p...)
+
+Query 2: Onde está o texto sobre tartaruga ninja?
+  (Deve encontrar: A tartaruga ninja desenvolveu um sistema operacional em Pyth...)
+
+Query 3: Onde está o texto sobre unicórnio rosa?
+  (Deve encontrar: O unicórnio rosa invisível programou um banco de dados usand...)
+
+Query 4: Onde está o texto sobre vaca que pula?
+  (Deve encontrar: A vaca que pula a cerca desenvolveu um algoritmo de machine ...)
+
+Query 5: Onde está o texto sobre peixe que voa?
+  (Deve encontrar: O peixe que voa implementou um sistema de cache distribuído ...)
+

@@ -1,0 +1,247 @@
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+
+
+================================================================================
+
+PARÁGRAFO DE TESTE - FORA DE CONTEXTO
+
+================================================================================
+
+
+O unicórnio rosa invisível programou um banco de dados usando SQL escrito em hieróglifos egípcios. Os dragões voadores implementaram um protocolo de rede que transmite dados através de ondas de chocolate derretido. Este parágrafo completamente sem sentido testa a precisão do embedding.
+
+
+================================================================================
+
+
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.
+
+Redes de Computadores permitem a comunicação entre dispositivos através de
+    protocolos padronizados. O modelo OSI (Open Systems Interconnection) define
+    sete camadas de abstração, desde a camada física até a camada de aplicação.
+    O modelo TCP/IP, mais utilizado na prática, simplifica isso em quatro camadas:
+    Link, Internet, Transporte e Aplicação.
+    
+    O protocolo IP (Internet Protocol) é responsável pelo roteamento de pacotes
+    através da rede. Ele utiliza endereços IP para identificar dispositivos e
+    determinar o caminho que os dados devem seguir. IPv4 utiliza endereços de
+    32 bits, enquanto IPv6 expande para 128 bits, permitindo um número muito maior
+    de endereços únicos.
+    
+    TCP (Transmission Control Protocol) e UDP (User Datagram Protocol) são
+    protocolos da camada de transporte. TCP oferece comunicação confiável com
+    controle de fluxo e retransmissão de pacotes perdidos. UDP é mais simples e
+    rápido, mas não garante entrega ou ordem dos pacotes, sendo útil para
+    aplicações que priorizam velocidade sobre confiabilidade.
+    
+    A segurança em redes é fundamental, especialmente com o crescimento de ameaças
+    cibernéticas. Firewalls filtram tráfego de rede baseado em regras definidas.
+    VPNs (Virtual Private Networks) criam túneis criptografados para comunicação
+    segura através de redes públicas. Protocolos como HTTPS, SSH e TLS garantem
+    que dados sensíveis sejam transmitidos de forma segura.
+    
+    Redes sem fio utilizam ondas de rádio para transmitir dados. Wi-Fi é o padrão
+    mais comum, operando em diferentes frequências (2.4 GHz e 5 GHz) e com vários
+    padrões (802.11n, 802.11ac, 802.11ax). A segurança em redes sem fio é crítica,
+    utilizando protocolos como WPA2 e WPA3 para proteger contra acesso não autorizado.

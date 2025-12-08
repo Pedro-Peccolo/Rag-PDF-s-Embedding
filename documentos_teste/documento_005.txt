@@ -1,0 +1,255 @@
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+
+
+================================================================================
+
+PARÁGRAFO DE TESTE - FORA DE CONTEXTO
+
+================================================================================
+
+
+O peixe que voa implementou um sistema de cache distribuído usando memória de elefantes que memorizam números de telefone. Os cangurus programadores desenvolveram uma API REST que responde apenas em código Morse transmitido via rádio AM. Este parágrafo sem contexto algum serve para validar a busca vetorial.
+
+
+================================================================================
+
+
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
+
+Inteligência Artificial e Machine Learning são campos que buscam criar sistemas
+    capazes de aprender e tomar decisões. Machine Learning utiliza algoritmos que
+    melhoram automaticamente através da experiência, sem serem explicitamente
+    programados para cada tarefa. Aprendizado supervisionado usa dados rotulados
+    para treinar modelos, enquanto aprendizado não supervisionado encontra padrões
+    em dados sem rótulos.
+    
+    Redes Neurais são modelos inspirados no funcionamento do cérebro humano,
+    consistindo de camadas de neurônios artificiais conectados. Deep Learning utiliza
+    redes neurais com muitas camadas (deep networks) para aprender representações
+    complexas dos dados. CNNs (Convolutional Neural Networks) são especializadas
+    em processamento de imagens, enquanto RNNs (Recurrent Neural Networks) são
+    adequadas para sequências temporais.
+    
+    Processamento de Linguagem Natural (NLP) permite que computadores entendam
+    e gerem linguagem humana. Técnicas incluem tokenização, análise sintática,
+    reconhecimento de entidades nomeadas e análise de sentimento. Modelos de
+    linguagem grandes como GPT e BERT revolucionaram o campo, permitindo tarefas
+    como tradução, sumarização e geração de texto.
+    
+    Aprendizado por Reforço é um paradigma onde um agente aprende através de
+    interação com um ambiente, recebendo recompensas ou penalidades por suas ações.
+    O agente desenvolve uma política que maximiza a recompensa acumulada ao longo
+    do tempo. Aplicações incluem jogos, robótica e sistemas de recomendação.
+    
+    Ética em IA é uma área crítica que aborda questões como viés algorítmico,
+    privacidade, transparência e responsabilidade. Sistemas de IA podem perpetuar
+    ou amplificar vieses presentes nos dados de treinamento. É essencial desenvolver
+    sistemas justos, explicáveis e que respeitem a privacidade dos usuários.
