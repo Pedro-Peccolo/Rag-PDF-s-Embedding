@@ -11,6 +11,15 @@ import pandas as pd
 from langchain_chroma import Chroma
 from criar_db import ProcempaEmbeddings
 from dotenv import load_dotenv
+from rank_bm25 import BM25Okapi
+import nltk
+from nltk.tokenize import word_tokenize
+
+# Baixar punkt tokenizer se necessário
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', quiet=True)
 
 # Carregar variaveis de ambiente
 load_dotenv()
@@ -89,10 +98,10 @@ def calcular_similaridade(query_embedding, doc_embeddings, top_k=3):
 
     return top_resultados, df_scores
 
-def buscar_com_scores(db, pergunta, k=3):
-    """Busca documentos e calcula scores de similaridade"""
+def buscar_com_scores(db, pergunta, k=3, a=1.0):
+    """Busca documentos e calcula scores híbridos (embedding + BM25)"""
     print(f"\nPergunta: {pergunta}")
-    print("\nCalculando scores de similaridade...\n")
+    print(f"Calculando scores híbridos (a={a:.1f}: {a*100:.0f}% embedding, {(1-a)*100:.0f}% BM25)...\n")
 
     # Criar modelo de embeddings
     embeddings_model = criar_embeddings(verbose=False)
@@ -127,23 +136,45 @@ def buscar_com_scores(db, pergunta, k=3):
     doc_matrix = np.array(doc_embeddings)
     query_vec = np.array(query_emb).reshape(1, -1)
 
-    # Calcular scores reais (cosine) entre query e todos os candidatos
-    scores = cosine_similarity(query_vec, doc_matrix)[0]
+    # Calcular scores de embedding (cosine similarity)
+    embedding_scores = cosine_similarity(query_vec, doc_matrix)[0]
 
-    # Criar lista com todos os resultados e scores
+    # Preparar dados para BM25
+    corpus = [doc.page_content.strip() for doc in docs_validos]
+    tokenized_corpus = [word_tokenize(doc.lower()) for doc in corpus]
+
+    # Criar modelo BM25
+    bm25 = BM25Okapi(tokenized_corpus)
+
+    # Tokenizar query para BM25
+    tokenized_query = word_tokenize(pergunta.lower())
+
+    # Calcular scores BM25
+    bm25_scores = bm25.get_scores(tokenized_query)
+
+    # Normalizar scores BM25 para o range [0, 1] (dividindo pelo máximo)
+    max_bm25 = max(bm25_scores) if len(bm25_scores) > 0 and max(bm25_scores) > 0 else 1.0
+    bm25_scores_normalized = bm25_scores / max_bm25
+
+    # Calcular scores híbridos: a * embedding + (1-a) * bm25
+    hybrid_scores = a * embedding_scores + (1 - a) * bm25_scores_normalized
+
+    # Criar lista com todos os resultados e scores híbridos
     todos_resultados = []
-    for i, (score, doc) in enumerate(zip(scores, docs_validos)):
+    for i, (hybrid_score, embedding_score, bm25_score, doc) in enumerate(zip(hybrid_scores, embedding_scores, bm25_scores_normalized, docs_validos)):
         conteudo = doc.page_content.strip()
         todos_resultados.append({
             'indice': i,
-            'score': float(score),
+            'score': float(hybrid_score),
+            'score_embedding': float(embedding_score),
+            'score_bm25': float(bm25_score),
             'documento': doc,
             'conteudo': conteudo,
             'fonte': doc.metadata.get('source', ''),
             'pagina': doc.metadata.get('page', '')
         })
 
-    # Ordenar pelo score (decrescente)
+    # Ordenar pelo score híbrido (decrescente)
     todos_resultados.sort(key=lambda x: x['score'], reverse=True)
 
     # Estratégia simples: selecionar k trechos únicos pulando duplicados por conteúdo
@@ -181,16 +212,18 @@ def buscar_com_scores(db, pergunta, k=3):
         print(f"Encontrados {len(docs_unicos)} resultados únicos")
 
     # Mostrar resultados
-    print("\nRESULTADOS:")
+    print(f"\nRESULTADOS HÍBRIDOS (a={a:.1f}):")
     print("="*50)
 
     for i, item in enumerate(docs_unicos, 1):
         score = item['score']
-        fonte = item['fonte'] or 'Desconhecido'
+        score_emb = item['score_embedding']
+        score_bm25 = item['score_bm25']
+        fonte = os.path.basename(item['fonte']) if item['fonte'] else 'Desconhecido'
         pagina = item['pagina'] or 'N/A'
         conteudo = item['conteudo']
 
-        print(f"\n[{i}] Score: {score:.4f} | Fonte: {fonte} (Página {pagina})")
+        print(f"\n[{i}] Score: {score:.4f} (Emb: {score_emb:.4f}, BM25: {score_bm25:.4f}) | Fonte: {fonte} (Página {pagina})")
         print("-"*80)
         print(conteudo)
         print("-"*80)
@@ -198,13 +231,15 @@ def buscar_com_scores(db, pergunta, k=3):
     # Criar df de scores apenas com os únicos
     df_scores = pd.DataFrame({
         'ranking': range(1, len(docs_unicos) + 1),
-        'score_similaridade': [item['score'] for item in docs_unicos],
-        'fonte': [item['fonte'] or 'Desconhecido' for item in docs_unicos],
+        'score_hibrido': [item['score'] for item in docs_unicos],
+        'score_embedding': [item['score_embedding'] for item in docs_unicos],
+        'score_bm25': [item['score_bm25'] for item in docs_unicos],
+        'fonte': [os.path.basename(item['fonte']) if item['fonte'] else 'Desconhecido' for item in docs_unicos],
         'pagina': [item['pagina'] or 'N/A' for item in docs_unicos]
     })
 
     # Mostrar tabela final
-    print(f"\nTABELA DE SCORES:")
+    print(f"\nTABELA DE SCORES HÍBRIDOS (a={a:.1f}):")
     print("="*50)
     print(df_scores.to_string(index=False, float_format='%.4f'))
 
@@ -213,11 +248,11 @@ def buscar_com_scores(db, pergunta, k=3):
 def main():
     """Funcao principal"""
     print("="*80)
-    print("SISTEMA DE BUSCA EM DOCUMENTOS - VERSAO SIMPLES")
+    print("SISTEMA DE BUSCA HÍBRIDA EM DOCUMENTOS")
     print("="*80)
     print("\nEste sistema busca e retorna os trechos mais relevantes dos documentos.")
-    print("Usa embeddings PROCEMPA para busca semantica.")
-    print("Calcula scores de similaridade usando Cosine Similarity.")
+    print("Usa Hybrid Search: combinação de embeddings PROCEMPA e BM25.")
+    print("Você pode ajustar o parâmetro 'a' (0.0=100% BM25, 1.0=100% embedding).")
     print("="*80)
     
     # Carregar banco vetorial
@@ -234,17 +269,31 @@ def main():
     while True:
         print("\n" + "="*80)
         pergunta = input("\nDigite sua pergunta (ou 'sair' para encerrar): ")
-        
+
         if pergunta.lower() in ['sair', 'exit', 'quit', 'q']:
             print("\nEncerrando sistema. Ate logo!")
             break
-        
+
         if not pergunta.strip():
             print("Por favor, digite uma pergunta valida.")
             continue
-        
+
+        # Permitir ao usuário escolher o parâmetro a
         try:
-            buscar_com_scores(db, pergunta, k=3)
+            a_input = input("Digite o parâmetro 'a' (0.0=100% BM25, 1.0=100% embedding) [padrão: 0.7]: ").strip()
+            if a_input == "":
+                a = 0.7
+            else:
+                a = float(a_input)
+                if not (0.0 <= a <= 1.0):
+                    print("Valor deve estar entre 0.0 e 1.0. Usando padrão 0.7.")
+                    a = 0.7
+        except ValueError:
+            print("Valor inválido. Usando padrão 0.7.")
+            a = 0.7
+
+        try:
+            buscar_com_scores(db, pergunta, k=3, a=a)
         except Exception as e:
             print(f"Erro ao processar pergunta: {e}")
             import traceback

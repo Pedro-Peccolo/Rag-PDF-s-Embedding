@@ -54,7 +54,7 @@ def carregar_documentos():
 def dividir_chunks(documentos):
     separador_documentos = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50, length_function=len)
     chunks = separador_documentos.split_documents(documentos)
-
+    
     # Filtrar chunks duplicados
     conteudos_unicos = set()
     chunks_filtrados = []
@@ -86,14 +86,14 @@ class ProcempaEmbeddings(Embeddings):
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """Gera embeddings para uma lista de documentos"""
         embeddings = []
-
+        
         # Processar em lotes para evitar sobrecarga
         batch_size = 10
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             batch_embeddings = self._embed_batch(batch, input_type="passage")
             embeddings.extend(batch_embeddings)
-
+            
         return embeddings
     
     def embed_query(self, text: str) -> List[float]:
