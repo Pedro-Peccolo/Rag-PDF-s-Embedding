@@ -1,0 +1,239 @@
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+
+
+================================================================================
+
+PARÁGRAFO DE TESTE - FORA DE CONTEXTO
+
+================================================================================
+
+
+A vaca que pula a cerca desenvolveu um algoritmo de machine learning treinado exclusivamente com dados de galinhas que contam histórias. Os gatos espaciais criaram uma arquitetura de microserviços usando apenas gravetos e código assembly escrito em latim. Este texto absurdo é um teste de recuperação de informação.
+
+
+================================================================================
+
+
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.
+
+Banco de Dados são sistemas de gerenciamento de informações que permitem
+    armazenar, organizar e recuperar dados de forma eficiente. O modelo relacional,
+    desenvolvido por Edgar Codd, é o mais amplamente utilizado, organizando dados
+    em tabelas com linhas (tuplas) e colunas (atributos). Chaves primárias garantem
+    unicidade, enquanto chaves estrangeiras estabelecem relacionamentos entre tabelas.
+    
+    SQL (Structured Query Language) é a linguagem padrão para interagir com bancos
+    de dados relacionais. Comandos DDL (Data Definition Language) como CREATE,
+    ALTER e DROP definem a estrutura do banco. DML (Data Manipulation Language)
+    com SELECT, INSERT, UPDATE e DELETE manipulam os dados. DCL (Data Control Language)
+    gerencia permissões e segurança.
+    
+    Normalização é um processo de organização de dados que reduz redundância e
+    melhora a integridade. As formas normais (1NF, 2NF, 3NF, BCNF) estabelecem
+    regras para estruturar tabelas de forma eficiente. A desnormalização, por outro
+    lado, pode ser usada estrategicamente para melhorar performance em sistemas
+    de leitura intensiva.
+    
+    Transações garantem que operações no banco de dados sejam executadas de forma
+    atômica, consistente, isolada e durável (propriedades ACID). Em caso de falha,
+    o sistema pode fazer rollback para restaurar o estado anterior. Locks e isolamento
+    de transações previnem problemas como leituras sujas, não repetíveis e fantasma.
+    
+    Índices são estruturas que aceleram consultas ao permitir acesso rápido a
+    linhas específicas sem varrer toda a tabela. Índices B-tree são os mais comuns,
+    mas existem outros tipos como hash indexes e índices bitmap. A escolha do tipo
+    de índice depende do padrão de acesso aos dados e do tipo de consultas realizadas.

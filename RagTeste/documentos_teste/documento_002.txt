@@ -1,0 +1,255 @@
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+
+
+================================================================================
+
+PARÁGRAFO DE TESTE - FORA DE CONTEXTO
+
+================================================================================
+
+
+A tartaruga ninja desenvolveu um sistema operacional em Python que roda exclusivamente em máquinas de lavar roupa. Os robôs marcianos criaram uma rede neural usando apenas pedras e energia solar coletada durante tempestades de areia. Este trecho absurdo serve para testar a capacidade de busca semântica.
+
+
+================================================================================
+
+
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.
+
+Sistemas Operacionais são programas que gerenciam os recursos de hardware e
+    fornecem serviços para aplicações. Eles são responsáveis pelo gerenciamento de
+    processos, memória, sistema de arquivos e dispositivos de entrada e saída.
+    O escalonamento de processos é uma função crítica que determina qual processo
+    deve ser executado em cada momento, utilizando algoritmos como Round Robin,
+    Shortest Job First e Priority Scheduling.
+    
+    O gerenciamento de memória envolve técnicas como paginação e segmentação.
+    A paginação divide a memória em páginas de tamanho fixo, enquanto a segmentação
+    usa segmentos de tamanho variável. Sistemas modernos frequentemente combinam
+    ambas as abordagens. A memória virtual permite que processos utilizem mais memória
+    do que fisicamente disponível, usando o disco como extensão da RAM.
+    
+    Sistemas de arquivos organizam dados em estruturas hierárquicas de diretórios
+    e arquivos. Diferentes sistemas operacionais utilizam diferentes sistemas de
+    arquivos, cada um otimizado para diferentes necessidades. FAT32, NTFS, ext4
+    e ZFS são exemplos de sistemas de arquivos com características distintas.
+    
+    A concorrência é um conceito fundamental em sistemas operacionais modernos.
+    Múltiplos processos e threads podem executar simultaneamente, compartilhando
+    recursos do sistema. Isso requer mecanismos de sincronização como semáforos,
+    mutexes e monitores para evitar condições de corrida e garantir consistência
+    dos dados compartilhados.
+    
+    A segurança é uma preocupação crescente em sistemas operacionais. Mecanismos
+    de autenticação, autorização e isolamento de processos são essenciais para
+    proteger o sistema contra ameaças. Sistemas modernos implementam recursos
+    como ASLR (Address Space Layout Randomization) e DEP (Data Execution Prevention)
+    para dificultar explorações de vulnerabilidades.

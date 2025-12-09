@@ -4,86 +4,230 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
+import os
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from criar_db import ProcempaEmbeddings
+from dotenv import load_dotenv
 
-PASTA_DB = "chroma_db"
+# Carregar variaveis de ambiente
+load_dotenv()
 
-def criar_embeddings():
-    """Cria o mesmo modelo de embeddings usado na criacao do banco"""
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        model_kwargs={'device': 'cpu'}
+# Usar banco PROCEMPA
+import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PASTA_DB = os.path.join(SCRIPT_DIR, "chroma_db_procempa")
+PROCEMPA_EMBEDDING_URL = os.getenv("PROCEMPA_EMBEDDING_URL", "https://nv-embed1b.k8s-gpu.procempa.com.br/v1/embeddings")
+PROCEMPA_API_KEY = os.getenv("PROCEMPA_API_KEY", "")
+
+def criar_embeddings(verbose=True):
+    """Cria o modelo de embeddings PROCEMPA usado na criacao do banco"""
+    embeddings = ProcempaEmbeddings(
+        api_url=PROCEMPA_EMBEDDING_URL,
+        api_key=PROCEMPA_API_KEY,
+        verbose=verbose
     )
     return embeddings
 
 def carregar_banco_vetorial():
     """Carrega o banco vetorial ChromaDB ja criado"""
     embeddings = criar_embeddings()
-    
+
     print("Carregando banco de dados vetorial...")
+
+    # Verificar se o banco existe e tem documentos
+    if not os.path.exists(PASTA_DB):
+        print(f"❌ ERRO: Banco de dados não encontrado em '{PASTA_DB}'")
+        print("Execute 'python3 criar_db.py' primeiro para criar o banco de dados.")
+        return None
+
     db = Chroma(
         persist_directory=PASTA_DB,
         embedding_function=embeddings
     )
-    print(f"Banco carregado com sucesso!")
+
+    # Verificar se há documentos no banco
+    try:
+        docs = db.get()
+        num_docs = len(docs['documents']) if 'documents' in docs else 0
+
+        if num_docs == 0:
+            print(f"❌ ERRO: Banco de dados existe mas está vazio.")
+            print("Execute 'python3 criar_db.py' primeiro para criar o banco de dados.")
+            return None
+
+        print(f"Banco carregado com sucesso! ({num_docs} documentos)")
+    except Exception as e:
+        print(f"❌ ERRO ao verificar banco de dados: {e}")
+        return None
+
     return db
 
-def buscar_informacao(db, pergunta, k=3):
-    """Busca os trechos mais relevantes para a pergunta"""
+def calcular_similaridade(query_embedding, doc_embeddings, top_k=3):
+    """Calcula scores de similaridade usando cosine similarity"""
+    query_vec = np.array(query_embedding).reshape(1, -1)
+    doc_matrix = np.array(doc_embeddings)
+    scores = cosine_similarity(query_vec, doc_matrix)[0]
+
+    resultados = []
+    for i, score in enumerate(scores):
+        resultados.append({
+            'indice': i,
+            'score': float(score)
+        })
+
+    resultados.sort(key=lambda x: x['score'], reverse=True)
+    top_resultados = resultados[:top_k]
+
+    df_scores = pd.DataFrame({
+        'ranking': range(1, len(top_resultados) + 1),
+        'indice_documento': [r['indice'] for r in top_resultados],
+        'score_similaridade': [r['score'] for r in top_resultados]
+    })
+
+    return top_resultados, df_scores
+
+def buscar_com_scores(db, pergunta, k=3):
+    """Busca documentos e calcula scores de similaridade"""
     print(f"\nPergunta: {pergunta}")
-    print("\nBuscando informacoes relevantes...\n")
-    
-    # Buscar documentos similares (buscar mais para garantir k únicos após remover duplicatas)
-    docs = db.similarity_search(pergunta, k=k*2)  # Busca mais para ter opções
-    
-    # Remover duplicatas baseado no conteúdo do chunk
+    print("\nCalculando scores de similaridade...\n")
+
+    # Criar modelo de embeddings
+    embeddings_model = criar_embeddings(verbose=False)
+
+    # Obter embedding da pergunta
+    query_emb = embeddings_model.embed_query(pergunta)
+    print("Embedding da query gerado")
+
+    # Buscar mais documentos para ter diversidade de chunks
+    search_k = 50  # Buscar 50 chunks (permite múltiplos chunks por documento)
+    docs = db.similarity_search(pergunta, k=search_k)
+
+    # Gerar embeddings dos documentos (debug + re-ranking)
+    print("Gerando embeddings...")
+    doc_embeddings = []
+    docs_validos = []
+
+    for idx, doc in enumerate(docs):
+        try:
+            emb = embeddings_model.embed_documents([doc.page_content])[0]
+            doc_embeddings.append(emb)
+            docs_validos.append(doc)
+        except Exception as e:
+            continue
+
+    print(f"{len(doc_embeddings)} embeddings gerados")
+    if len(doc_embeddings) == 0:
+        print("❌ Nenhum embedding válido gerado.")
+        return [], pd.DataFrame()
+
+    # Converter em matriz numpy
+    doc_matrix = np.array(doc_embeddings)
+    query_vec = np.array(query_emb).reshape(1, -1)
+
+    # Calcular scores reais (cosine) entre query e todos os candidatos
+    scores = cosine_similarity(query_vec, doc_matrix)[0]
+
+    # Criar lista com todos os resultados e scores
+    todos_resultados = []
+    for i, (score, doc) in enumerate(zip(scores, docs_validos)):
+        conteudo = doc.page_content.strip()
+        todos_resultados.append({
+            'indice': i,
+            'score': float(score),
+            'documento': doc,
+            'conteudo': conteudo,
+            'fonte': doc.metadata.get('source', ''),
+            'pagina': doc.metadata.get('page', '')
+        })
+
+    # Ordenar pelo score (decrescente)
+    todos_resultados.sort(key=lambda x: x['score'], reverse=True)
+
+    # Estratégia simples: selecionar k trechos únicos pulando duplicados por conteúdo
+    # Pula duplicados e continua na lista até encontrar k resultados únicos
     docs_unicos = []
     conteudos_vistos = set()
-    
-    for doc in docs:
-        conteudo_normalizado = doc.page_content.strip()
-        # Criar uma chave única baseada no conteúdo + fonte + página
-        chave = (conteudo_normalizado, 
-                doc.metadata.get('source', ''), 
-                doc.metadata.get('page', ''))
-        
-        if chave not in conteudos_vistos:
-            conteudos_vistos.add(chave)
-            docs_unicos.append(doc)
-            
-            # Parar quando tiver k chunks únicos
-            if len(docs_unicos) >= k:
-                break
-    
-    print("="*80)
-    print("TRECHOS MAIS RELEVANTES ENCONTRADOS:")
-    print("="*80)
-    
-    for i, doc in enumerate(docs_unicos, 1):
-        fonte = doc.metadata.get('source', 'Desconhecido')
-        pagina = doc.metadata.get('page', 'N/A')
-        conteudo = doc.page_content.strip()
-        
-        print(f"\n[{i}] Fonte: {fonte} (Pagina {pagina})")
+
+    K = k
+
+    def normalize_text(s):
+        """Normaliza texto para comparação: remove espaços extras e converte para minúsculas"""
+        return ' '.join(s.lower().split())
+
+    # Percorrer resultados ordenados por score (maior para menor)
+    for idx, resultado in enumerate(todos_resultados):
+        # Normalizar conteúdo para comparação
+        conteudo_normalizado = normalize_text(resultado['conteudo'])
+
+        # Se já vimos esse conteúdo, pula e continua para o próximo
+        if conteudo_normalizado in conteudos_vistos:
+            continue
+
+        # Conteúdo único: adiciona
+        conteudos_vistos.add(conteudo_normalizado)
+        docs_unicos.append(resultado)
+
+        # Para quando tiver exatamente K resultados únicos
+        if len(docs_unicos) >= K:
+            break
+
+    # Se não encontrou K resultados únicos, informar
+    if len(docs_unicos) < K:
+        print(f"Apenas {len(docs_unicos)} resultados únicos encontrados")
+    else:
+        print(f"Encontrados {len(docs_unicos)} resultados únicos")
+
+    # Mostrar resultados
+    print("\nRESULTADOS:")
+    print("="*50)
+
+    for i, item in enumerate(docs_unicos, 1):
+        score = item['score']
+        fonte = item['fonte'] or 'Desconhecido'
+        pagina = item['pagina'] or 'N/A'
+        conteudo = item['conteudo']
+
+        print(f"\n[{i}] Score: {score:.4f} | Fonte: {fonte} (Página {pagina})")
         print("-"*80)
         print(conteudo)
         print("-"*80)
-    
-    return docs_unicos
+
+    # Criar df de scores apenas com os únicos
+    df_scores = pd.DataFrame({
+        'ranking': range(1, len(docs_unicos) + 1),
+        'score_similaridade': [item['score'] for item in docs_unicos],
+        'fonte': [item['fonte'] or 'Desconhecido' for item in docs_unicos],
+        'pagina': [item['pagina'] or 'N/A' for item in docs_unicos]
+    })
+
+    # Mostrar tabela final
+    print(f"\nTABELA DE SCORES:")
+    print("="*50)
+    print(df_scores.to_string(index=False, float_format='%.4f'))
+
+    return docs_unicos, df_scores
 
 def main():
     """Funcao principal"""
     print("="*80)
     print("SISTEMA DE BUSCA EM DOCUMENTOS - VERSAO SIMPLES")
     print("="*80)
-    print("\nEste sistema busca e retorna os trechos mais relevantes dos seus PDFs.")
-    print("Nao usa LLM externa - funciona 100% local e offline!")
+    print("\nEste sistema busca e retorna os trechos mais relevantes dos documentos.")
+    print("Usa embeddings PROCEMPA para busca semantica.")
+    print("Calcula scores de similaridade usando Cosine Similarity.")
     print("="*80)
     
     # Carregar banco vetorial
     print("\nInicializando sistema...")
     db = carregar_banco_vetorial()
+
+    if db is None:
+        print("\n❌ Sistema não pôde ser inicializado devido a problemas no banco de dados.")
+        return
+
     print("\nSistema pronto!")
     
     # Loop de perguntas
@@ -100,7 +244,7 @@ def main():
             continue
         
         try:
-            buscar_informacao(db, pergunta, k=3)
+            buscar_com_scores(db, pergunta, k=3)
         except Exception as e:
             print(f"Erro ao processar pergunta: {e}")
             import traceback
