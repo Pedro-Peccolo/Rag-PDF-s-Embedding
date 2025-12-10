@@ -168,3 +168,6 @@ def vetorizar_chunks(chunks):
     print(f"Total de {len(chunks)} chunks vetorizados com modelo PROCEMPA!")
     
     return db
+
+if __name__ == "__main__":
+    criar_db()
