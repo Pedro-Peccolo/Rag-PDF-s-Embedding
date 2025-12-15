@@ -19,13 +19,12 @@ load_dotenv()
 # Configuração PROCEMPA
 # Endpoint da API de embedding da PROCEMPA
 PROCEMPA_EMBEDDING_URL = os.getenv("PROCEMPA_EMBEDDING_URL", "https://nv-embed1b.k8s-gpu.procempa.com.br/v1/embeddings")
-PROCEMPA_API_KEY = os.getenv("PROCEMPA_API_KEY", "")
 
 # Usando documentos de teste e banco separado
 # Obter o diretório do script atual para caminhos relativos funcionarem
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PASTA_BASE = os.path.join(SCRIPT_DIR, "documentos_teste")  # Mudado para documentos_teste
-PASTA_DB = os.path.join(SCRIPT_DIR, "chroma_db_procempa")  # Banco separado para teste PROCEMPA
+PASTA_BASE = os.path.join(SCRIPT_DIR, "documentos_teste")  # caminho para os documentos de teste
+PASTA_DB = os.path.join(SCRIPT_DIR, "chroma_db_procempa")  # banco de dados local
 
 def criar_db():
     #carregar documentos
@@ -39,8 +38,8 @@ def criar_db():
     
 
 def carregar_documentos():
-    """Carrega documentos de texto da pasta documentos_teste"""
-    # Usar DirectoryLoader com TextLoader para arquivos .txt
+   
+    # usar DirectoryLoader com TextLoader para arquivos .txt no diretorio documentos_teste
     carregador = DirectoryLoader(
         PASTA_BASE,
         glob="*.txt",
@@ -55,7 +54,7 @@ def dividir_chunks(documentos):
     separador_documentos = RecursiveCharacterTextSplitter(chunk_size=400, chunk_overlap=50, length_function=len)
     chunks = separador_documentos.split_documents(documentos)
     
-    # Filtrar chunks duplicados
+    # filtrar chunks duplicados /Era para parar de retornar chunks duplicados mas era por conta do banco duplicado, posso remover isso se quiser
     conteudos_unicos = set()
     chunks_filtrados = []
 
@@ -73,34 +72,31 @@ def dividir_chunks(documentos):
 class ProcempaEmbeddings(Embeddings):
     """Classe customizada para usar embeddings da API PROCEMPA"""
     
-    def __init__(self, api_url: str, api_key: str = "", verbose: bool = True):
+    def __init__(self, api_url: str, verbose: bool = True):
         self.api_url = api_url
-        self.api_key = api_key
         self.verbose = verbose
         self.headers = {
             "Content-Type": "application/json"
         }
-        if api_key:
-            self.headers["Authorization"] = f"Bearer {api_key}"
     
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """Gera embeddings para uma lista de documentos"""
         embeddings = []
         
-        # Processar em lotes para evitar sobrecarga
+        #lotes para evitar sobrecarga
         batch_size = 10
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
-            batch_embeddings = self._embed_batch(batch, input_type="passage")
+            batch_embeddings = self._embed_batch(batch, input_type="passage") #_embed_batch é a função que gera os embeddings
             embeddings.extend(batch_embeddings)
             
         return embeddings
     
     def embed_query(self, text: str) -> List[float]:
-        """Gera embedding para uma query"""
+        #vetoriza/embeddings para uma query=pergunta
         return self._embed_batch([text], input_type="query")[0]
     
-    def _embed_batch(self, texts: List[str], input_type: str = "passage") -> List[List[float]]:
+    def _embed_batch(self, texts: List[str], input_type: str = "passage") -> List[List[float]]:# input_type="passage" para documentos, "query" para queries
         """Gera embeddings para um lote de textos"""
         # Formato da API NVIDIA NIM
         # Modelos assimétricos precisam do parâmetro input_type: "passage" ou "query"
@@ -147,25 +143,24 @@ class ProcempaEmbeddings(Embeddings):
 
 
 def vetorizar_chunks(chunks):
-    """Vetoriza chunks usando o modelo de embedding da PROCEMPA"""
+    #vetoriza chunks usando o modelo de embedding
     
-    # Criar modelo de embeddings da PROCEMPA
+    # cria modelo de embedding
     embeddings = ProcempaEmbeddings(
-        api_url=PROCEMPA_EMBEDDING_URL,
-        api_key=PROCEMPA_API_KEY
+        api_url=PROCEMPA_EMBEDDING_URL
     )
     
-    print("Criando banco de dados vetorial com ChromaDB usando embeddings PROCEMPA...")
+    print("Criando banco de dados vetorial com ChromaDB usando embeddings...")
     
-    # Criar banco vetorial com ChromaDB
+    # criar banco vetorial com ChromaDB
     db = Chroma.from_documents(
         documents=chunks,
         embedding=embeddings,
-        persist_directory=PASTA_DB  # Salva localmente
+        persist_directory=PASTA_DB  # salva localmente
     )
     
     print(f"Banco de dados criado com sucesso em '{PASTA_DB}'!")
-    print(f"Total de {len(chunks)} chunks vetorizados com modelo PROCEMPA!")
+    print(f"Total de {len(chunks)} chunks vetorizados!")
     
     return db
 

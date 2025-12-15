@@ -21,7 +21,7 @@ from criar_db import ProcempaEmbeddings
 from retriever import buscar_com_scores
 from dotenv import load_dotenv
 
-# Baixar punkt tokenizer se necessário
+# baixar punkt tokenizer se necessário, para funcionar o BM25
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
@@ -33,29 +33,27 @@ parent_dir = os.path.dirname(script_dir)
 env_path = os.path.join(parent_dir, '.env')
 load_dotenv(env_path)
 
-# Configurações do banco PROCEMPA
+# Configurações do banco
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PASTA_DB_PROCEMPA = os.path.join(SCRIPT_DIR, "chroma_db_procempa")
 PROCEMPA_EMBEDDING_URL = os.getenv("PROCEMPA_EMBEDDING_URL", "https://nv-embed1b.k8s-gpu.procempa.com.br/v1/embeddings")
-PROCEMPA_API_KEY = os.getenv("PROCEMPA_API_KEY", "")
 
 def criar_embeddings_procempa(verbose=True):
-    """Cria o modelo de embeddings PROCEMPA usado na criação do banco"""
+    #cria o modelo de embeddings usado na criacao do banco
     embeddings = ProcempaEmbeddings(
         api_url=PROCEMPA_EMBEDDING_URL,
-        api_key=PROCEMPA_API_KEY,
         verbose=verbose
     )
     return embeddings
 
 
 def carregar_banco_vetorial_procempa():
-    """Carrega o banco vetorial ChromaDB PROCEMPA já criado"""
+    #carrega o banco vetorial ChromaDB já criado
     embeddings = criar_embeddings_procempa(verbose=False)
 
     print("Carregando banco de dados vetorial...")
 
-    # Verificar se o banco existe e tem documentos
+    # verificar se o banco existe e tem documentos
     if not os.path.exists(PASTA_DB_PROCEMPA):
         print(f"❌ ERRO: Banco de dados não encontrado em '{PASTA_DB_PROCEMPA}'")
         print("Execute 'python3 criar_db.py' primeiro para criar o banco de dados.")
@@ -66,7 +64,7 @@ def carregar_banco_vetorial_procempa():
         embedding_function=embeddings
     )
 
-    # Verificar se há documentos no banco
+    # verificar se há documentos no banco
     try:
         docs = db.get()
         num_docs = len(docs['documents']) if 'documents' in docs else 0
@@ -84,7 +82,7 @@ def carregar_banco_vetorial_procempa():
     return db
 
 def criar_llm_nvidia():
-    """Cria a LLM usando NVIDIA NIM (Llama)"""
+    #cria a LLM usando NVIDIA NIM (Llama)
     # Verificar se a API key da NVIDIA está configurada
     nvidia_api_key = os.getenv("NVIDIA_API_KEY")
     if not nvidia_api_key:
@@ -115,8 +113,8 @@ def criar_llm_nvidia():
         return None
 
 class HybridRetriever(BaseRetriever):
-    """Retriever híbrido que usa a lógica do retriever.py"""
-
+    #retriever híbrido que usa a lógica do retriever.py
+    #inicializa o retriever
     def __init__(self, db, alpha=0.7, k=3):
         super().__init__()
         object.__setattr__(self, 'db', db)
@@ -124,18 +122,18 @@ class HybridRetriever(BaseRetriever):
         object.__setattr__(self, 'k', k)
 
     def _get_relevant_documents(self, query: str) -> List[Document]:
-        """Busca híbrida usando a função do retriever.py"""
-        # Usar a função buscar_com_scores do retriever.py
+        #busca híbrida usando a função do retriever.py
+        # usar a função buscar_com_scores do retriever.py
         docs_unicos, _ = buscar_com_scores(self.db, query, k=self.k, a=self.alpha)
-        # Retornar apenas os documentos (não os scores)
+        # retornar apenas os documentos (não os scores)
         return [item['documento'] for item in docs_unicos]
 
     async def _aget_relevant_documents(self, query: str) -> List[Document]:
-        """Versão assíncrona"""
+        #.
         return self._get_relevant_documents(query)
 
 def criar_prompt_template():
-    """Cria o template de prompt em português para o RAG - amigável e direto"""
+    #cria o template de prompt em português para o RAG
     template = """Você é um sistema RAG (Retrieval-Augmented Generation) que responde perguntas baseado em documentos fornecidos.
 
 O contexto abaixo contém informações extraídas de documentos. Sua função é apresentar essas informações de forma clara e amigável, SEM questionar, SEM corrigir, SEM adicionar conhecimento externo.
@@ -164,27 +162,28 @@ Responda em português brasileiro de forma natural:"""
     return prompt
 
 def criar_sistema_rag():
-    """Cria o sistema RAG completo com busca híbrida e LLM NVIDIA"""
-    # Carregar banco vetorial PROCEMPA
+    #cria o sistema RAG completo com busca híbrida e LLM NVIDIA
+    
+    # carregar banco vetorial
     db = carregar_banco_vetorial_procempa()
     if db is None:
         return None
 
-    # Criar modelo de embeddings PROCEMPA
+    # criar modelo de embeddings
     embeddings = criar_embeddings_procempa(verbose=False)
 
-    # Criar LLM NVIDIA
+    # criar LLM NVIDIA
     llm = criar_llm_nvidia()
     if llm is None:
         return None
 
-    # Criar retriever híbrido com alpha ótimo (0.7)
+    # criar retriever híbrido com alpha (0.7)
     hybrid_retriever = HybridRetriever(db, alpha=0.7, k=3)
 
-    # Criar prompt template
+    # criar prompt template
     prompt = criar_prompt_template()
 
-    # Criar cadeia de consulta RAG
+    # criar cadeia de consulta RAG
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
@@ -196,7 +195,7 @@ def criar_sistema_rag():
     return qa_chain
 
 def fazer_pergunta_rag(qa_chain, pergunta):
-    """Faz uma pergunta ao sistema RAG completo com lógica de score mínimo"""
+    #faz uma pergunta ao sistema RAG completo com lógica de score mínimo
     print(f"\n" + "="*80)
     print(f"Pergunta: {pergunta}")
     print("="*80)
@@ -234,24 +233,24 @@ def fazer_pergunta_rag(qa_chain, pergunta):
         traceback.print_exc()
 
 def main():
-    """Função principal do sistema RAG completo"""
+    #função principal do sistema RAG completo
     print("="*80)
     print("🤖 SISTEMA RAG COMPLETO - CONSULTA DE DOCUMENTOS")
     print("="*80)
     print("Pipeline: Query → Retriever Híbrido (70% Embeddings + 30% BM25) → Contexto → LLM Llama")
     print("="*80)
 
-    # Verificar configurações necessárias
+    # verifica configurações necessárias
     print("\nVerificando configurações...")
 
-    # Verificar URL PROCEMPA (obrigatória)
+    # verificar URL PROCEMPA (obrigatória)
     if not PROCEMPA_EMBEDDING_URL:
         print("❌ ERRO: PROCEMPA_EMBEDDING_URL não encontrada!")
         print("Configure a variável de ambiente PROCEMPA_EMBEDDING_URL no arquivo .env")
         return
 
 
-    # Verificar banco de dados
+    # verificar banco de dados
     if not os.path.exists(PASTA_DB_PROCEMPA):
         print(f"❌ ERRO: Banco de dados não encontrado em '{PASTA_DB_PROCEMPA}'")
         print("Execute 'python3 criar_db.py' primeiro para criar o banco de dados.")
@@ -273,9 +272,10 @@ def main():
 
     print("✅ Sistema RAG pronto para uso!\n")
 
-    # Loop de perguntas
+    # loop de perguntas
     while True:
         print("-" * 80)
+        print("Sugestão de pergunta para teste: 'Quem descobriu o Brasil?'")
         pergunta = input("\nDigite sua pergunta (ou 'sair' para encerrar): ")
 
         if pergunta.lower() in ['sair', 'exit', 'quit', 'q']:
@@ -288,7 +288,7 @@ def main():
             print("❌ Por favor, digite uma pergunta válida.")
             continue
 
-        # Processar pergunta com RAG completo
+        # processar pergunta com RAG completo
         fazer_pergunta_rag(qa_chain, pergunta)
 
 if __name__ == "__main__":

@@ -30,7 +30,6 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PASTA_DB = os.path.join(SCRIPT_DIR, "chroma_db_procempa")
 PROCEMPA_EMBEDDING_URL = os.getenv("PROCEMPA_EMBEDDING_URL", "https://nv-embed1b.k8s-gpu.procempa.com.br/v1/embeddings")
-PROCEMPA_API_KEY = os.getenv("PROCEMPA_API_KEY", "")
 
 def testar_conectividade_procempa():
     """Testa se a API PROCEMPA está acessível"""
@@ -42,8 +41,6 @@ def testar_conectividade_procempa():
             "input_type": "query"
         }
         headers = {"Content-Type": "application/json"}
-        if PROCEMPA_API_KEY:
-            headers["Authorization"] = f"Bearer {PROCEMPA_API_KEY}"
 
         response = requests.post(PROCEMPA_EMBEDDING_URL, json=payload, headers=headers, timeout=10)
         return response.status_code == 200
@@ -54,7 +51,6 @@ def criar_embeddings(verbose=True):
     """Cria o modelo de embeddings PROCEMPA usado na criacao do banco"""
     embeddings = ProcempaEmbeddings(
         api_url=PROCEMPA_EMBEDDING_URL,
-        api_key=PROCEMPA_API_KEY,
         verbose=verbose
     )
     return embeddings
